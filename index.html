@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="IR-fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Converter</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+        <header id="titleSection">
+            <h2 class="titleSection--en">Base Converter💻</h2>
+            <h3 class="titleSection--IR">تبدیل عدد بین مبناهای مختلف</h3>
+        </header>
+
+        <section id="operationSection">
+            <div class="operationSection--inputNum">
+                <label for="inputNum">عدد موردنظر</label>
+                <input id="inputNum"  type="text" placeholder="عدد خود را وارد کنید">
+            </div>
+
+            <div class="iobasis">
+                <div class="operationSection--inputBasis">
+                    <label for="inputBasis">مبنای ورودی</label>
+                    <select name="fromBase" id="inputBasis">
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+                <div class="operationSection--outputBasis">
+                    <label for="outputBasis">مبنای خروجی</label>
+                    <select name="toBase" id="outputBasis">
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10" selected>10</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="submitBtn">
+                <button>تبدیل کن</button>
+            </div>
+
+            <div id="resultBox">
+                <p>عدد ورودی :</p>
+                <p>مبنای ورودی :</p>
+                <p>مبنای خروجی :</p>
+                <hr>
+                <p>نتیجه :</p>
+            </div>
+
+        </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

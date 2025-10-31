@@ -1,0 +1,139 @@
+@import url(../fonts/fonts.css);
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: vazir;
+   outline: none;
+   direction: rtl;
+   transition: all 0.2s ease;
+}
+html,body{
+    height:100%;
+}
+body{
+background: radial-gradient(1200px 600px at 10% 10%, rgba(79,155,255,0.06), transparent),
+linear-gradient(180deg, #061026 0%, #071226 100%);
+color:#e6eef8;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+
+main{
+    width:100%;
+    max-width:50rem;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#operationSection{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0rem 2rem 2.5rem rgba(2,6,23,0.6);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    backdrop-filter: blur(0.6rem);
+}
+
+
+.operationSection--inputNum{
+    display: flex;
+    flex-direction: column;
+}
+.operationSection--inputNum label{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.operationSection--inputNum input{
+    border: solid 0.12rem;
+    border-radius: 0.85rem;
+    padding: 1rem 2rem;
+}
+.operationSection--inputNum input:hover{
+    border-color: #4f9bff;
+}
+
+
+.iobasis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.iobasis div {
+    display: flex;
+    flex-direction: column;
+}
+.operationSection--inputBasis label{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.operationSection--inputBasis select{
+    border: solid 0.12rem;
+    border-radius: 0.85rem;
+    padding: 1rem 3rem;
+}
+.operationSection--outputBasis label{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.operationSection--outputBasis select{
+    border: solid 0.12rem;
+    border-radius: 0.85rem;
+    padding: 1rem 3rem;
+}
+
+
+.submitBtn button{
+    width: 100%;
+    border: solid 0.12rem;
+    padding: 1rem;
+    border-radius: 0.85rem;
+    cursor: pointer;
+}
+.submitBtn button:hover{
+    border-color: #4f9bff;
+    color: #4f9bff;
+}
+
+
+select{
+    cursor: pointer;
+}
+select:hover {
+    border-color: #4f9bff;
+}
+
+#resultBox {
+    background-color: #4f9bff;
+    color: black;
+    padding: 1rem;
+    border-radius: 1.2rem;
+}
+#resultBox :nth-child(3){
+    padding-bottom: 0.5rem;
+}
+#resultBox :nth-child(4){
+    border: solid rgb(3, 3, 56) 0.02rem;
+}
+#resultBox :nth-child(5){
+    padding-top: 0.5rem;
+}
