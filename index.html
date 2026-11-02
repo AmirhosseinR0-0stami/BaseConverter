@@ -1,59 +1,165 @@
 <!DOCTYPE html>
-<html lang="IR-fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Converter</title>
+    <meta name="theme-color" content="#080b18">
+    <title>Base Converter | تبدیل مبنا</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <main>
-        <header id="titleSection">
-            <h2 class="titleSection--en">Base Converter💻</h2>
-            <h3 class="titleSection--IR">تبدیل عدد بین مبناهای مختلف</h3>
-        </header>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="background-grid"></div>
 
+    <main class="app-container">
         <section id="operationSection">
-            <div class="operationSection--inputNum">
-                <label for="inputNum">عدد موردنظر</label>
-                <input id="inputNum"  type="text" placeholder="عدد خود را وارد کنید">
-            </div>
-
-            <div class="iobasis">
-                <div class="operationSection--inputBasis">
-                    <label for="inputBasis">مبنای ورودی</label>
-                    <select name="fromBase" id="inputBasis">
-                        <option value="2">2</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="16">16</option>
-                    </select>
+            <div class="brand">
+                <div class="brand-icon">
+                    <span>&lt;/&gt;</span>
                 </div>
-                <div class="operationSection--outputBasis">
-                    <label for="outputBasis">مبنای خروجی</label>
-                    <select name="toBase" id="outputBasis">
-                        <option value="2">2</option>
-                        <option value="8">8</option>
-                        <option value="10" selected>10</option>
-                        <option value="16">16</option>
-                    </select>
+
+                <span class="brand-name">BASE<span>LAB</span></span>
+            </div>
+
+            <div class="form-content">
+                <div class="operationSection--inputNum form-group">
+                    <label for="inputNum">
+                        عدد مورد نظر خود را وارد کنید
+                    </label>
+                    <input
+                        id="inputNum"
+                        type="text"
+                        placeholder="مثلاً 101101"
+                        autocomplete="off"
+                        spellcheck="false"
+                        dir="ltr"
+                    >
+                </div>
+
+                <div class="basis-section">
+                    <div class="operationSection--inputBasis form-group">
+                        <label for="inputBasis">مبنای ورودی</label>
+                        <div class="select-wrapper">
+                            <select name="fromBase" id="inputBasis">
+                                <option value="2">2 — باینری</option>
+                                <option value="8">8 — اکتال</option>
+                                <option value="10">10 — دسیمال</option>
+                                <option value="16">16 — هگزادسیمال</option>
+                            </select>
+                            <span class="select-arrow">⌄</span>
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="conversion-icon"
+                        id="swapBases"
+                        aria-label="جابه‌جایی مبنای ورودی و خروجی"
+                        title="جابه‌جایی مبناها"
+                    >
+                        <span>↔</span>
+                    </button>
+
+                    <div class="operationSection--outputBasis form-group">
+                        <label for="outputBasis">مبنای خروجی</label>
+                        <div class="select-wrapper">
+                            <select name="toBase" id="outputBasis">
+                                <option value="2">2 — باینری</option>
+                                <option value="8">8 — اکتال</option>
+                                <option value="10" selected>10 — دسیمال</option>
+                                <option value="16">16 — هگزادسیمال</option>
+                            </select>
+                            <span class="select-arrow">⌄</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submitBtn">
+                    <button type="button">
+                        تبدیل عدد
+                    </button>
                 </div>
             </div>
 
-            <div class="submitBtn">
-                <button>تبدیل کن</button>
+            <div id="resultBox" aria-live="polite">
+                <div class="result-heading">
+                    <div class="result-icon">
+                        <span>🧮</span>
+                    </div>
+                    <div>
+                        <h3>نتیجه تبدیل</h3>
+                        <p>خروجی نهایی شما اینجاست.</p>
+                    </div>
+                    <span class="result-status">RESULT</span>
+                </div>
+
+                <div class="result-details">
+                    <div class="result-item">
+                        <span>عدد ورودی</span>
+                        <p dir="ltr">---</p>
+                    </div>
+                    <div class="result-item">
+                        <span>مبنای ورودی</span>
+                        <p dir="ltr">---</p>
+                    </div>
+                    <div class="result-item">
+                        <span>مبنای خروجی</span>
+                        <p dir="ltr">---</p>
+                    </div>
+                </div>
+
+                <div class="result-divider"></div>
+
+                <div class="final-result">
+                    <span class="final-result-label">مقدار تبدیل‌شده</span>
+                    <p class="final-result-value" dir="ltr">---</p>
+                </div>
             </div>
 
-            <div id="resultBox">
-                <p>عدد ورودی :</p>
-                <p>مبنای ورودی :</p>
-                <p>مبنای خروجی :</p>
-                <hr>
-                <p>نتیجه :</p>
-            </div>
-
+            <footer class="card-footer">
+                <div class="footer-security">
+                    <span class="footer-check">✓</span>
+                    پردازش مستقیم در مرورگر شما
+                </div>
+                <span class="footer-version">Amirhossein Rostami</span>
+            </footer>
         </section>
+
+        <section class="supported-bases">
+            <p>مبناهای پشتیبانی‌شده</p>
+            <div class="base-chips">
+                <div class="base-chip">
+                    <span class="chip-number">02</span>
+                    <span>Binary</span>
+                </div>
+
+                <div class="base-chip">
+                    <span class="chip-number">08</span>
+                    <span>Octal</span>
+                </div>
+
+                <div class="base-chip">
+                    <span class="chip-number">10</span>
+                    <span>Decimal</span>
+                </div>
+
+                <div class="base-chip">
+                    <span class="chip-number">16</span>
+                    <span>Hexadecimal</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            طراحی‌شده برای علاقه‌مندان به دنیای برنامه‌نویسی
+            <span>✦</span>
+        </footer>
     </main>
+
+
     <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
